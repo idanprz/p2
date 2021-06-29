@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <input id="userNum" type="text" value="Enter number here" style="display: flex; margin: auto;"> <br>
+    <button onclick="MyCalc(userNum.value)" style="display: flex; margin: auto;">Calculate</button>
+    <div id="display" style="text-align: center;"></div>
+    <script>
+        function MyCalc(numStr) {
+            let num = Number(numStr)
+            num *= Math.PI
+            display.innerHTML = 
+            `<h1> You have entered ${numStr}.<br>
+            ${numStr} x PI rounded = ${Math.round(num)} </h1>`
+        }
+    </script>
+</body>
+</html>

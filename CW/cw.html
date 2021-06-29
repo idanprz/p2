@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <!-- simple greeting
+    <div id="disp1"></div>
+    <button onclick="func1()">Greet</button>
+    <script>
+        function func1() {
+            disp1.innerHTML = `Greetings`
+        }
+    </script> -->
+
+    <!-- greet given input name -->
+    <!-- <div id="disp2"></div>
+    <input id="yourName" type="text" value="Your name">
+    <button onclick="func2()">Greet you</button>
+    <script>
+        function func2() {
+            disp2.innerHTML = `Greetings ${yourName.value}`
+        }
+    </script> -->
+
+    <!-- <div id="disp3"></div>
+    <button onclick="DisplayEvenNums(0,20)">Even Nums 0-20: </button>
+    <script>
+        function GetEvenNums(min,max) {
+            evenNums = ""
+            for (let curr = min; curr <= max; curr++) {
+                if (curr%2 == 0) {
+                    evenNums += `${curr} `
+                }
+            }
+            return evenNums
+        }
+
+        function DisplayEvenNums(min,max) {
+            disp3.innerHTML = `<h1> ${GetEvenNums(min,max)} <h1/> <br>`
+        }
+    </script> -->
+
+    <script>
+        function FizzBuzz(from, to, fizz, buzz) {
+            let str = ""
+            for (let i = from; i <= to; i++) {
+                let writeFlag = false
+
+                if (i%fizz == 0) {
+                    str += 'fizz '
+                    writeFlag = true
+                }
+                if (i%buzz == 0) {
+                    str += 'buzz '
+                    writeFlag = true
+                }
+                if (writeFlag == false) {
+                    str += `${i} `
+                }
+            }
+
+            return str += '\n'
+        }
+
+        console.log(FizzBuzz(0, 15, 5, 3))
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <div id="display" style="text-align: center;"></div>
+
+    <script>
+        function MakeDoubleDigit(num){
+            return num.toString(). length == 1 ? '0' + num : num
+        }
+
+        function DisplayTime() {
+            const date = new Date()
+
+            let hrs = MakeDoubleDigit(date.getHours())
+            let mins = MakeDoubleDigit(date.getMinutes())
+            let secs = MakeDoubleDigit(date.getSeconds())
+            
+            display.innerHTML = 
+            `<h1> ${hrs}:${mins}:${secs} </h1>`
+        }
+
+        setInterval(DisplayTime, 1)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <div id="display"><br></div>
+    <script>
+        function ColorChangeDiv() {
+            let myDiv = document.getElementById("display")
+            let r = Math.random()*256
+            let g = Math.random()*256
+            let b = Math.random()*256
+            
+            myDiv.innerHTML = 
+            `<div style="background-color: rgb(${r}, ${g}, ${b});"><br></div>`
+        }
+
+        setInterval(ColorChangeDiv, 150)
+    </script>
+</body>
+
+</html>

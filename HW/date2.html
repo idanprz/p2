@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <button onclick="DisplayDate()" style="display: flex; margin: auto;">Display date</button>
+    <div id="display" style="text-align: center;"></div>
+
+    <script>
+        function DisplayDate() {
+            const date = new Date()
+
+            let day = date.getDate()
+            let month = date.getMonth()
+            let strMonth = ""
+            let year = date.getFullYear()
+
+            switch (month) {
+                case 0:
+                    strMonth = "Jan"
+                    break;
+                case 1:
+                    strMonth = "Feb"
+                    break;
+                case 2:
+                    strMonth = "Mar"
+                    break;
+                case 3:
+                    strMonth = "Apr"
+                    break;
+                case 4:
+                    strMonth = "May"
+                    break;
+                case 5:
+                    strMonth = "Jun"
+                    break;
+                case 6:
+                    strMonth = "Jul"
+                    break;
+                case 7:
+                    strMonth = "Aug"
+                    break;
+                case 8:
+                    strMonth = "Sep"
+                    break;
+                case 9:
+                    strMonth = "Oct"
+                    break;
+                case 10:
+                    strMonth = "Nov"
+                    break;
+                case 11:
+                    strMonth = "Dec"
+                    break;
+            }
+
+            display.innerHTML =
+                `<h1> The date is: ${strMonth} ${day} ${year} </h1>`
+        }
+    </script>
+</body>
+
+</html>

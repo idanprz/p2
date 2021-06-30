@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <style>
+        .cruising {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: red;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn" class="cruising" style="top: 0px; left:0px;">I am a button</button>
+
+    <script>
+        const Height = window.screen.availHeight
+        const Width = window.screen.availWidth
+        let myBtn = document.getElementById("btn")
+        // let lefttt = 0
+        // let toppp = 0
+
+        function CruiseButton() {
+            // let r = Math.random()*256
+            // let g = Math.random()*256
+            // let b = Math.random()*256
+
+            // lefttt += 5
+            // toppp += 2
+            
+            myBtn.style.left += 5
+            myBtn.style.top += 5
+        }
+
+        setInterval(CruiseButton, 150)
+    </script>
+</body>
+
+</html>

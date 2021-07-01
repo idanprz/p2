@@ -3,7 +3,7 @@
 <head>
     <style>
         .cruising {
-            position: absolute;
+            position: relative;
             width: 100px;
             height: 100px;
             background: red;
@@ -17,20 +17,34 @@
     <button id="btn" class="cruising" style="top: 0px; left:0px;">I am a button</button>
 
     <script>
-        const Height = window.screen.availHeight
-        const Width = window.screen.availWidth
-        let myBtn = document.getElementById("btn")
-
+        const MaxHeight = window.innerHeight
+        const MaxWidth = window.innerWidth
+        const myBtn = document.getElementById("btn")
+        
         function CruiseButton() {
-            // let r = Math.random()*256
-            // let g = Math.random()*256
-            // let b = Math.random()*256
+            let currLeft = parseInt(myBtn.style.left)
+            let currTop = parseInt(myBtn.style.top)
+            const btnWidth = parseInt(myBtn.style.width)
+            console.log(document.getElementById("btn").style.width)
+            
+            if (currTop >= MaxHeight - btnWidth ) {
+                myBtn.style.top = '0px'
 
-            myBtn.style.left = `${parseInt(myBtn.style.left) + 5}px`
-            myBtn.style.top = `${parseInt(myBtn.style.top) + 5}px`
+                return
+            }
+
+            if (currLeft >= MaxWidth - btnWidth ) {
+                myBtn.style.left = '0px'
+
+                return
+            }
+
+            myBtn.style.left = `${currLeft + 15}px`
+            myBtn.style.top = `${currTop + 13}px`
+
         }
 
-        setInterval(CruiseButton, 150)
+        setInterval(CruiseButton, 100)
     </script>
 </body>
 

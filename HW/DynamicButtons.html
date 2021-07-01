@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <style>
+        button {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- utils -->
+    <script>
+        function MakeDoubleDigit(num) {
+            const date = new Date()
+            return num.toString().length == 1 ? '0' + num : num
+        }
+
+        function GetSeconds() {
+            const date = new Date()
+
+            return MakeDoubleDigit(date.getSeconds())
+        }
+
+        function AssignToProperty(elem, param) {
+            elem.innerHTML = `${param}</br>`
+        }
+
+        function AppendToBody(str) {
+            document.body.innerHTML += str
+        }
+    </script>
+
+    <script>
+
+        for (let i = 1; i < 101; i++) {
+            AppendToBody(`<button id='btn${i}' onclick="AssignToProperty(document.getElementById('btn${i}'), GetSeconds())"></button>`)
+        }
+
+    </script>
+
+
+</body>
+
+</html>

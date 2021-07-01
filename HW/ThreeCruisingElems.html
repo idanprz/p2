@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <style>
+        .cruising {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            background: red;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button id="btn" class="cruising" style="top: 0px; left:0px;">I am a button</button> -->
+
+    <script>
+        const MaxHeight = window.innerHeight
+        const MaxWidth = window.innerWidth
+
+
+        document.body.innerHTML =
+            `<button id="btn" class="cruising" style="top: ${MaxHeight / 2}px; left:0px;">I am a button</button>`
+
+
+        const myBtn = document.getElementById("btn")
+
+        let deltaX = 8
+        let deltaY = 0
+
+        function CruiseButton() {
+            let currLeft = parseInt(myBtn.style.left)
+            let currTop = parseInt(myBtn.style.top)
+            const btnWidth = parseInt(myBtn.style.width)
+            console.log(document.getElementById("btn").style.width)
+            let secs = new Date().getSeconds
+
+            deltaY = MaxHeight * Math.sin(secs / 59 * 2*Math.PI) 
+
+            // if (currTop > MaxHeight - 30 || currTop < 0) {
+            //     deltaY = -deltaY
+            // }
+
+            if (currLeft > MaxWidth - 30 || currLeft < 0) {
+                deltaX = -deltaX
+            }
+
+            myBtn.style.left = currLeft + deltaX + 'px'
+            myBtn.style.top = currTop + deltaY + 'px'
+
+        }
+
+        setInterval(CruiseButton, 20)
+    </script>
+
+    <!-- <script>
+        const MaxHeight = window.innerHeight
+        const MaxWidth = window.innerWidth
+        const myBtn = document.getElementById("btn")
+
+        let delta1 = 8
+        let delta2 = 5
+        
+        function CruiseButton() {
+            let currLeft = parseInt(myBtn.style.left)
+            let currTop = parseInt(myBtn.style.top)
+            const btnWidth = parseInt(myBtn.style.width)
+            console.log(document.getElementById("btn").style.width)
+            
+            if (currTop > MaxHeight - 30 || currTop < 0) {
+                delta2 = -delta2
+            }
+            
+            if (currLeft > MaxWidth - 30  || currLeft < 0) {
+                delta1 = -delta1
+            }
+
+            myBtn.style.left = currLeft + delta1 + 'px'
+            myBtn.style.top = currTop + delta2 + 'px'
+
+        }
+
+        setInterval(CruiseButton, 20)
+    </script> -->
+</body>
+
+</html>
